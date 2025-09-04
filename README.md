@@ -1,5 +1,7 @@
 # TOP Project: Rock Paper Scissors
 
+A rock paper scissors game.
+
 ## Playing the Game
 
-The user is prompted for their action, but the output is only shown in the developer tools console
+The game works with window prompts and alerts. There is no UI.
