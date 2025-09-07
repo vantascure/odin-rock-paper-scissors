@@ -23,19 +23,28 @@ function getComputerChoice() {
     }
 }
 
-// Get human choice
-function getHumanChoice() {
-    let humanChoice = prompt("Choose 'rock', 'paper' or 'scissors':");
-    return humanChoice.toLocaleLowerCase();
-}
-
 function playGame() {
     // Initialize variables to store human score, computer score, and game round
     let humanScore = 0, computerScore = 0;
     let round = 0;
 
+    function gameOver() {
+        if (humanScore == computerScore) {
+            alert("Game over! It's a tie. You are equally matched.");
+        } else if (humanScore > computerScore) {
+            alert("Game over! You win.");
+        } else {
+            alert("Game over! You lose.");
+        }
+
+        alert("Game has been reset. Have fun playing again.");
+        humanScore = 0, computerScore = 0, round = 0;
+    }
+
     // Function for one game round
-    function playRound(humanChoice, computerChoice) {
+    function playRound(humanChoice) {
+        let computerChoice = getComputerChoice();
+
         alert(`Player chose ${humanChoice}.\nComputer chose ${computerChoice}.`);
 
         if (humanChoice === computerChoice) {
@@ -49,12 +58,33 @@ function playGame() {
         }
 
         alert(`Your score is ${humanScore} | Computer score is ${computerScore}`)
+
+        round += 1;
+
+        if (round > 4) {
+            gameOver();
+            return;
+        }
     }
 
-    while (round < 5) {
-        playRound(getHumanChoice(), getComputerChoice());
-        round += 1;
-    }
+    weapons = document.querySelectorAll(".weapons-container button");
+    weapons.forEach(weapon => {
+        weapon.addEventListener("click", () => {
+            let humanChoice;
+            switch (weapon.id) {
+                case "rock-btn":
+                    humanChoice = "rock";
+                    break;
+                case "paper-btn":
+                    humanChoice = "paper";
+                    break;
+                case "scissors-btn":
+                    humanChoice = "scissors";
+            }
+            
+            playRound(humanChoice);
+        });
+    });
 }
 
 playGame();
