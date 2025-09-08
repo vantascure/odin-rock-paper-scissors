@@ -38,14 +38,25 @@ h1 {
 .weapons-container button {
     width: 10rem;
     height: 10rem;
-    background-color: #696969;
+    background-color: #424242;
+    color: #000;
     border: none;
     border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
 }
 
 .weapons-container button:hover {
-    background-color: #424242;
+    background-color: #696969;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    color: #FFF;
     cursor: pointer;
+}
+
+.weapons-container button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .weapons-container i {
