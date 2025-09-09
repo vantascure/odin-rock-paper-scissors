@@ -32,7 +32,6 @@ function getComputerChoice() {
 }
 
 function playGame() {
-    // Initialize variables to store human score, computer score, and game round
     let humanLives = 5, computerLives = 5;
     let round = 0;
 
