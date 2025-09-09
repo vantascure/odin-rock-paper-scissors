@@ -13,6 +13,7 @@ const outputContainer = document.querySelector(".output-container");
 const computerChoiceContainer = document.querySelector(".computer-choice-container");
 const resultsContainer = document.querySelector(".results-container");
 const resultText = document.querySelector("#result");
+const playAgainBtn = document.querySelector("#play-again-btn");
 
 // Generate random number between 0-2
 function getRandomInt(max) {
@@ -86,6 +87,11 @@ function playGame() {
             resultText.textContent = "You Lose!"
             resultText.style.color = "red";
         }
+
+        playAgainBtn.addEventListener("click", () => {
+            window.location.reload();
+        });
+
         resultsContainer.style.display = "block";
     }
 
