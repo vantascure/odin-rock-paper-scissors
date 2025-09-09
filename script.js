@@ -104,10 +104,8 @@ function playGame() {
 
             if (humanLives > computerLives) {
                 winner = "human";
-                statusText.textContent = `You've fried the computer's brain!`;
             } else {
                 winner = "computer";
-                statusText.textContent = `A mere human beating a computer? Pfft... as if`;
             }
             
             resetGame(winner);
