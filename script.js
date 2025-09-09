@@ -9,6 +9,8 @@ const computerChoiceIcon = document.querySelector("#computer-choice-icon");
 const roundCounter = document.querySelector("#round");
 const livesText = document.querySelector("#lives")
 const statusText = document.querySelector("#status-text");
+const outputContainer = document.querySelector(".output-container");
+const computerChoiceContainer = document.querySelector(".computer-choice-container");
 
 // Generate random number between 0-2
 function getRandomInt(max) {
@@ -58,11 +60,17 @@ function playGame() {
         
         if (humanChoice === computerChoice) {
             statusText.textContent = `CLASH! It's a tie. Both chose ${humanChoice}.`;
+            outputContainer.style.border = "5px yellow solid";
+            computerChoiceContainer.style.borderRight = "5px yellow solid";
         } else if (OUTCOMES[humanChoice] === computerChoice) {
             statusText.textContent = `${humanChoice} beats ${computerChoice}.`;
+            outputContainer.style.border = "5px green solid";
+            computerChoiceContainer.style.borderRight = "5px green solid";
             humanLives -= 1;
         } else {
             statusText.textContent = `${computerChoice} beats ${humanChoice}.`;
+            outputContainer.style.border = "5px red solid";
+            computerChoiceContainer.style.borderRight = "5px red solid";
             computerLives -= 1;
         }
 
