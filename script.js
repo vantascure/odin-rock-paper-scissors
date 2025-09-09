@@ -5,6 +5,10 @@ const OUTCOMES = {
 };
 
 const weaponButtons = document.querySelectorAll(".weapons-container button");
+const computerChoiceIcon = document.querySelector("#computer-choice-icon");
+const roundCounter = document.querySelector("#round");
+const livesText = document.querySelector("#lives")
+const statusText = document.querySelector("#status-text");
 
 // Generate random number between 0-2
 function getRandomInt(max) {
@@ -27,10 +31,6 @@ function getComputerChoice() {
 
 function playGame() {
     // Initialize variables to store human score, computer score, and game round
-    const computerChoiceIcon = document.querySelector("#computer-choice-icon");
-    const resultText = document.querySelector("#result-text");
-    const roundCounter = document.querySelector("#round");
-    const livesText = document.querySelector("#lives")
     let humanLives = 5, computerLives = 5;
     let round = 0;
 
@@ -57,12 +57,12 @@ function playGame() {
         }
         
         if (humanChoice === computerChoice) {
-            resultText.textContent = `CLASH! It's a tie. Both chose ${humanChoice}.`;
+            statusText.textContent = `CLASH! It's a tie. Both chose ${humanChoice}.`;
         } else if (OUTCOMES[humanChoice] === computerChoice) {
-            resultText.textContent = `${humanChoice} beats ${computerChoice}.`;
+            statusText.textContent = `${humanChoice} beats ${computerChoice}.`;
             humanLives -= 1;
         } else {
-            resultText.textContent = `${computerChoice} beats ${humanChoice}.`;
+            statusText.textContent = `${computerChoice} beats ${humanChoice}.`;
             computerLives -= 1;
         }
 
@@ -76,9 +76,9 @@ function playGame() {
             });
 
             if (humanLives > computerLives) {
-                resultText.textContent = `You've fried the computer's brain!`;
+                statusText.textContent = `You've fried the computer's brain!`;
             } else {
-                resultText.textContent = `A mere human beating a computer? Pfft... as if`;
+                statusText.textContent = `A mere human beating a computer? Pfft... as if`;
             }
         }
     }
