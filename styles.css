@@ -55,6 +55,15 @@ h1 {
     cursor: pointer;
 }
 
+button.active-weapon {
+    background-color: #696969;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    color: #FFF;
+    cursor: pointer;
+    border: 3px gold solid;
+}
+
 .weapons-container button:active {
     transform: translateY(1px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);

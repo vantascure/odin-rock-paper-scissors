@@ -104,6 +104,10 @@ function playGame() {
                     humanChoice = "scissors";
                     break;
             }
+
+            weaponButtons.forEach(btn => btn.classList.remove("active-weapon"));
+
+            weapon.classList.add("active-weapon");
             
             playRound(humanChoice, getComputerChoice());
             endGame();
