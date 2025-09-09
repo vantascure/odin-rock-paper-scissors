@@ -101,3 +101,27 @@ button.active-weapon {
     padding: 1rem;
     line-height: 2.5rem;
 }
+
+.results-container {
+    text-align: center;
+    display: none;
+}
+
+#result {
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 5rem;
+}
+
+#play-again-btn {
+    margin: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background-color: #424242;
+    border: 3px #181818 solid;
+    border-radius: 10px;
+}
+
+#play-again-btn:hover {
+    background-color: #696969;
+    cursor: pointer;
+}

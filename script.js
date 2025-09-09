@@ -11,6 +11,8 @@ const livesText = document.querySelector("#lives")
 const statusText = document.querySelector("#status-text");
 const outputContainer = document.querySelector(".output-container");
 const computerChoiceContainer = document.querySelector(".computer-choice-container");
+const resultsContainer = document.querySelector(".results-container");
+const resultText = document.querySelector("#result");
 
 // Generate random number between 0-2
 function getRandomInt(max) {
@@ -76,17 +78,33 @@ function playGame() {
         livesText.textContent = `Your Lives: ${humanLives} | Enemy's Lives: ${computerLives}`;
     }
 
+    function resetGame(winner) {
+        if (winner === "human") {
+            resultText.textContent = "You Win!"
+            resultText.style.color = "green";
+        } else {
+            resultText.textContent = "You Lose!"
+            resultText.style.color = "red";
+        }
+        resultsContainer.style.display = "block";
+    }
+
     function endGame() {
+        let winner;
         if (humanLives === 0 || computerLives === 0) {
             weaponButtons.forEach((weapon) => {
                 weapon.setAttribute("disabled", "");
             });
 
             if (humanLives > computerLives) {
+                winner = "human";
                 statusText.textContent = `You've fried the computer's brain!`;
             } else {
+                winner = "computer";
                 statusText.textContent = `A mere human beating a computer? Pfft... as if`;
             }
+            
+            resetGame(winner);
         }
     }
 
