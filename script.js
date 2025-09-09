@@ -63,12 +63,12 @@ function playGame() {
             outputContainer.style.border = "5px yellow solid";
             computerChoiceContainer.style.borderRight = "5px yellow solid";
         } else if (OUTCOMES[humanChoice] === computerChoice) {
-            statusText.textContent = `${humanChoice} beats ${computerChoice}.`;
+            statusText.textContent = `${humanChoice[0].toLocaleUpperCase() + humanChoice.slice(1)} beats ${computerChoice}.`;
             outputContainer.style.border = "5px green solid";
             computerChoiceContainer.style.borderRight = "5px green solid";
             humanLives -= 1;
         } else {
-            statusText.textContent = `${computerChoice} beats ${humanChoice}.`;
+            statusText.textContent = `${computerChoice[0].toLocaleUpperCase() + computerChoice.slice(1)} beats ${humanChoice}.`;
             outputContainer.style.border = "5px red solid";
             computerChoiceContainer.style.borderRight = "5px red solid";
             computerLives -= 1;
