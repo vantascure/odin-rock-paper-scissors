@@ -66,3 +66,28 @@ h1 {
 .weapons-container p {
     padding-top: 0.5rem;
 }
+
+.output-container {
+    max-width: 50%;
+    border: 5px #424242 solid;
+    border-radius: 10px;
+    margin: 2rem auto;
+    display: flex;
+}
+
+.computer-choice-container {
+    width: 20%;
+    padding: 1rem;
+    text-align: center;
+    border-right: 5px #424242 solid;
+}
+
+.computer-choice-container i {
+    font-size: 5rem;
+    margin-top: 1.5rem;
+}
+
+.results-container {
+    padding: 1rem;
+    line-height: 2.5rem;
+}
